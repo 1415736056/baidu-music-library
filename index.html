@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18273a">
+  <meta name="description" content="浏览、搜索和复制百度网盘音乐资源的标题、正文和链接。">
+  <title>音乐资源面板</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2318273a'/%3E%3Cpath d='M40 14v30a8 8 0 1 1-5-7.4V21l16-4v22a8 8 0 1 1-5-7.4V11z' fill='%23e6b86d'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">♪</span><span>音乐资源面板</span></div>
+      <span class="scope">百度网盘资源</span>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="toolbar" aria-label="资源检索">
+      <div class="toolbar-heading">
+        <div>
+          <h1>资源列表</h1>
+          <p id="result-count" class="muted" aria-live="polite">正在加载资源…</p>
+        </div>
+      </div>
+      <label class="search-box">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.6"/><path d="m16 16 5 5"/></svg>
+        <span class="sr-only">搜索标题和正文</span>
+        <input id="search" type="search" placeholder="搜索标题或正文" autocomplete="off" disabled>
+      </label>
+    </section>
+
+    <div id="status" class="status" role="status"></div>
+    <section id="catalog" class="catalog" aria-label="百度网盘音乐资源"></section>
+    <div class="more-wrap"><button id="show-more" class="more-button" type="button" hidden>加载更多</button></div>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
